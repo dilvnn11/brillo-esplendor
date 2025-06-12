@@ -27,9 +27,9 @@
     </div>
   </section>
 
-  <!-- Servicios y Reserva lado a lado -->
-  <section class="fila fila-servicios-reserva">
-    <div id="servicios" class="seccion">
+  <!-- Servicios y Reserva en fila -->
+  <section class="fila-secciones">
+    <section id="servicios" class="seccion">
       <h2>Nuestros Servicios</h2>
       <div class="servicios-contenedor">
         <div class="servicio">
@@ -45,62 +45,61 @@
           <p class="precio">$18.000</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="reserva" class="seccion">
+    <section id="reserva" class="seccion">
       <h2>Reserva tu hora</h2>
       <form class="formulario">
         <input type="text" placeholder="Nombre completo" required>
         <input type="text" placeholder="Modelo del vehículo" required>
         <input type="date" required>
         <input type="time" required>
+
+        <label for="lavado">Tipo de Lavado:</label>
+        <select id="lavado" name="lavado" required>
+          <option value="" disabled selected>Selecciona un tipo de lavado</option>
+          <option value="basico">Lavado Básico - $10.000</option>
+          <option value="premium">Lavado Premium - $18.000</option>
+        </select>
+
         <button type="submit" class="btn">Confirmar reserva</button>
       </form>
-    </div>
+    </section>
   </section>
 
-  <!-- Testimonios, Pago y Mapa en una misma fila -->
-  <section class="fila fila-testimonios-pago-mapa">
-
-    <div id="testimonios" class="seccion testimonios">
+  <!-- Testimonios + Pago + Mapa en fila -->
+  <section class="fila-secciones">
+    <section id="testimonios" class="seccion testimonios">
       <h2>Testimonios</h2>
       <div class="testimonio">
-        <img src="testimonios.jpg" alt="Cliente feliz"/>
+        <img src="testimonios.jpg" alt="Cliente feliz" class="img-fuera"/>
         <p>"Excelente servicio, mi auto quedó como nuevo." - Juan P.</p>
       </div>
       <div class="testimonio">
-        <img src="testimonios.jpg" alt="Cliente feliz"/>
-        <p>"Muy detallistas, 100% recomendados." - María L.</p>
+        <img src="testimonios.jpg" alt="Cliente feliz" class="img-fuera"/>
+        <p>"Muy detallistas, los recomiendo totalmente." - Carla M.</p>
       </div>
       <div class="testimonio">
-        <img src="testimonios.jpg" alt="Cliente feliz"/>
-        <p>"Nunca había visto mi auto tan limpio." - Pedro M.</p>
+        <img src="testimonios.jpg" alt="Cliente feliz" class="img-fuera"/>
+        <p>"Rápidos y eficaces. Volveré sin duda." - Andrés G.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="seccion pago">
+    <section id="pago" class="seccion">
       <h2>Opciones de Pago</h2>
-      <p>Aceptamos pagos con:</p>
-      <ul>
-        <li>Tarjeta de Crédito</li>
-        <li>Débito</li>
-        <li>Transferencia Bancaria</li>
-        <li>Pago en efectivo</li>
-      </ul>
+      <p>Transferencia Bancaria</p>
+      <p>Débito / Crédito</p>
+      <p>Pago en efectivo al entregar el vehículo</p>
       <button class="btn">Pagar ahora</button>
-    </div>
+    </section>
 
-    <div class="seccion mapa" id="contacto">
+    <section id="contacto" class="seccion contacto">
       <h2>Encuéntranos</h2>
-      <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
-      <p><strong>WhatsApp:</strong> +56 9 8765 4321</p>
-      <p><strong>Email:</strong> contacto@brilloyesplendor.cl</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.402803025179!2d-70.57712282375389!3d-33.610394473324215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662da04757d7c49%3A0x99e7c97e90e5fdf9!2sDuoc%20UC%20Puente%20Alto!5e0!3m2!1ses-419!2scl!4v1718126039435!5m2!1ses-419!2scl"
-        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      <p><strong>Dirección:</strong> DUOC UC Puente Alto</p>
+      <iframe src="https://www.google.com/maps?q=DUOC+UC+Puente+Alto&output=embed" 
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
       </iframe>
-    </div>
-
+    </section>
   </section>
 
   <footer class="footer">

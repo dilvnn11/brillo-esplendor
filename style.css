@@ -1,68 +1,77 @@
-/* Reset general */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Paleta de colores */
-:root {
-  --azul-claro: #d4e9ff;
-  --azul-oscuro: #002244;
-  --gris-claro: #f7f7f7;
-  --gris-oscuro: #444;
-  --blanco: #ffffff;
-}
-
-/* Estilo global */
 body {
-  background-color: var(--gris-claro);
-  color: var(--gris-oscuro);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9; /* gris claro */
+  color: #333; /* texto base */
   line-height: 1.6;
 }
 
-/* Header */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ENCABEZADO */
 .encabezado {
-  background-color: var(--azul-oscuro);
-  padding: 15px 40px;
+  background-color: #1e3a5f; /* azul oscuro */
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
 }
 
 .nav a {
-  color: var(--blanco);
-  text-decoration: none;
   margin-left: 20px;
-  font-weight: bold;
+  color: white;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: var(--azul-claro);
+  color: #90cdf4; /* azul claro */
 }
 
-/* Hero con imagen de fondo y capa oscura */
+/* HERO */
 .hero {
   position: relative;
   height: 500px;
-  background: url('img/hero.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -74,12 +83,12 @@ body {
   padding: 40px;
   border-radius: 10px;
   backdrop-filter: blur(4px);
+  color: white;
 }
 
 .hero-texto h1 {
   font-size: 48px;
   margin-bottom: 10px;
-  color: #fff;
 }
 
 .hero-texto p {
@@ -88,58 +97,48 @@ body {
   color: #eee;
 }
 
-.hero-img {
-  display: none; /* Eliminada porque usamos fondo */
-}
-
-/* Botón */
 .btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: var(--azul-claro);
-  color: var(--azul-oscuro);
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
+  background-color: #2563eb; /* azul */
+  color: white;
+  padding: 12px 24px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .btn:hover {
-  background-color: var(--blanco);
+  background-color: #1e40af;
 }
 
-/* Secciones generales */
+/* SECCIONES GENERALES */
 .seccion {
   padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
+  text-align: center;
 }
 
 .seccion h2 {
-  text-align: center;
   font-size: 32px;
   margin-bottom: 40px;
-  color: var(--azul-oscuro);
+  color: #1e3a5f;
 }
 
-/* Servicios */
+/* SERVICIOS */
 .servicios-contenedor {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .servicio {
-  background-color: var(--blanco);
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s;
 }
 
 .servicio:hover {
@@ -148,117 +147,67 @@ body {
 
 .servicio img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.servicio h3 {
-  color: var(--azul-oscuro);
-  margin-bottom: 10px;
 }
 
 .precio {
+  font-size: 20px;
+  color: #2563eb;
   font-weight: bold;
-  color: var(--gris-oscuro);
   margin-top: 10px;
 }
 
-/* Reserva */
+/* FORMULARIO DE RESERVA */
 .formulario {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 500px;
-  margin: auto;
 }
 
 .formulario input,
 .formulario button {
   padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
   border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-.formulario button {
-  background-color: var(--azul-oscuro);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
+.formulario input:focus {
+  outline: 2px solid #2563eb;
 }
 
-.formulario button:hover {
-  background-color: #001a33;
-}
-
-/* Testimonios */
+/* TESTIMONIOS */
 .testimonio {
-  background-color: var(--blanco);
-  padding: 30px;
   max-width: 600px;
-  margin: auto;
+  margin: 0 auto;
+  background-color: #e2e8f0; /* gris suave */
+  padding: 30px;
   border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .testimonio img {
-  width: 100%;
-  height: 200px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Contacto */
-.contacto {
-  background-color: var(--gris-claro);
-  text-align: center;
-}
-
+/* CONTACTO */
 .contacto p {
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-size: 18px;
 }
 
-/* Mapa */
-iframe {
-  margin-top: 20px;
-  border-radius: 10px;
-  border: none;
-  width: 100%;
-  height: 250px;
-}
-
-/* Footer */
+/* FOOTER */
 .footer {
-  background-color: var(--azul-oscuro);
+  background-color: #1e3a5f;
   color: white;
   text-align: center;
   padding: 20px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .servicios-contenedor {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-texto h1 {
-    font-size: 36px;
-  }
-
-  .nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .nav a {
-    margin: 10px 0;
-  }
+  font-size: 14px;
 }

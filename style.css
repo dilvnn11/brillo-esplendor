@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +9,13 @@
 /* Paleta de colores */
 :root {
   --azul-claro: #d4e9ff;
-  --azul-oscuro: #003366;
-  --gris-claro: #f2f2f2;
-  --gris-oscuro: #555;
+  --azul-oscuro: #002244;
+  --gris-claro: #f7f7f7;
+  --gris-oscuro: #444;
   --blanco: #ffffff;
 }
 
-/* Fondo general */
+/* Estilo global */
 body {
   background-color: var(--gris-claro);
   color: var(--gris-oscuro);
@@ -25,7 +25,7 @@ body {
 /* Header */
 .encabezado {
   background-color: var(--azul-oscuro);
-  padding: 20px 40px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,55 +47,70 @@ body {
   color: var(--azul-claro);
 }
 
-/* Hero con imagen de fondo */
+/* Hero con imagen de fondo y capa oscura */
 .hero {
   position: relative;
+  height: 500px;
   background: url('img/hero.jpg') no-repeat center center/cover;
-  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   color: white;
 }
 
-.hero-img {
-  display: none; /* Imagen oculta porque ahora es fondo */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  z-index: 1;
 }
 
 .hero-texto {
-  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 10px;
+  backdrop-filter: blur(4px);
 }
 
-.hero h1 {
+.hero-texto h1 {
   font-size: 48px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
-.hero p {
+.hero-texto p {
   font-size: 20px;
   margin-bottom: 20px;
+  color: #eee;
 }
 
+.hero-img {
+  display: none; /* Eliminada porque usamos fondo */
+}
+
+/* Botón */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 12px 30px;
   background-color: var(--azul-claro);
   color: var(--azul-oscuro);
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
   background-color: var(--blanco);
 }
 
-/* Secciones */
+/* Secciones generales */
 .seccion {
   padding: 60px 20px;
   max-width: 1100px;
@@ -105,15 +120,15 @@ body {
 .seccion h2 {
   text-align: center;
   font-size: 32px;
-  color: var(--azul-oscuro);
   margin-bottom: 40px;
+  color: var(--azul-oscuro);
 }
 
 /* Servicios */
 .servicios-contenedor {
   display: flex;
-  gap: 30px;
   justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -121,9 +136,14 @@ body {
   background-color: var(--blanco);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.2s;
+}
+
+.servicio:hover {
+  transform: scale(1.03);
 }
 
 .servicio img {
@@ -136,6 +156,7 @@ body {
 
 .servicio h3 {
   color: var(--azul-oscuro);
+  margin-bottom: 10px;
 }
 
 .precio {
@@ -144,7 +165,7 @@ body {
   margin-top: 10px;
 }
 
-/* Formulario */
+/* Reserva */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -164,12 +185,13 @@ body {
 .formulario button {
   background-color: var(--azul-oscuro);
   color: white;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 
 .formulario button:hover {
-  background-color: #001f4d;
+  background-color: #001a33;
 }
 
 /* Testimonios */
@@ -185,7 +207,7 @@ body {
 
 .testimonio img {
   width: 100%;
-  max-height: 250px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -199,11 +221,16 @@ body {
 
 .contacto p {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
+/* Mapa */
 iframe {
   margin-top: 20px;
   border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 250px;
 }
 
 /* Footer */
@@ -212,4 +239,26 @@ iframe {
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .servicios-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-texto h1 {
+    font-size: 36px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav a {
+    margin: 10px 0;
+  }
 }

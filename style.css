@@ -1,46 +1,50 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
+/* Estilos generales */
 body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #f2f2f2;
   color: #333;
-  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
 }
 
 /* Encabezado */
 .encabezado {
-  background-color: #001f3f;
-  color: white;
+  background-color: #000;
+  color: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
 .logo {
-  height: 50px;
+  width: 140px;
+  height: auto;
 }
 
 .nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem;
+  margin-left: 1.5rem;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: #00bfff;
+  color: #FFD700;
 }
 
 /* Hero */
 .hero {
   position: relative;
-  height: 70vh;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -48,171 +52,157 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(50%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
 
 .hero-texto {
-  position: relative;
-  color: white;
-  text-align: center;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
 }
 
 .hero-texto h1 {
   font-size: 3rem;
 }
 
-.hero-texto p {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-
 .btn {
-  background-color: #0074D9;
-  color: white;
-  padding: 0.8rem 1.5rem;
+  background-color: #FFD700;
   border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  color: #000;
   font-weight: bold;
-  text-decoration: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #005fa3;
+  background-color: #e0c000;
 }
 
 /* Secciones */
 .seccion {
-  padding: 4rem 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 1rem;
+  flex: 1;
+  min-width: 300px;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #001f3f;
+/* Filas flexibles */
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
 }
 
-/* Servicios en formato horizontal */
+.fila-servicios-reserva {
+  background-color: #e6e6e6;
+}
+
+.fila-testimonios-pago-mapa {
+  background-color: #f9f9f9;
+}
+
+/* Servicios */
 .servicios-contenedor {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
-}
-
-.servicio {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  max-width: 300px;
-  text-align: center;
 }
 
 .servicio img {
   width: 100%;
-  height: auto;
-}
-
-.servicio h3 {
-  margin: 1rem 0 0.5rem;
-  color: #003366;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .precio {
   font-weight: bold;
-  color: #0074D9;
+  color: #000;
+}
+
+/* Formulario */
+.formulario input, .formulario button {
+  width: 100%;
+  padding: 0.7rem;
   margin-bottom: 1rem;
-}
-
-/* Formulario de Reserva */
-.formulario {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.formulario input,
-.formulario select {
-  padding: 0.8rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+}
+
+.formulario button {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #e0c000;
 }
 
 /* Testimonios */
-.testimonios-contenedor {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
 .testimonio {
-  background-color: white;
-  padding: 1.5rem;
-  padding-top: 3rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  padding: 1rem;
   border-radius: 10px;
-  position: relative;
-  width: 250px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .testimonio img {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 3px solid white;
   object-fit: cover;
+  margin-bottom: 0.5rem;
 }
 
 /* Pago */
-.pago {
-  background-color: #e6f0fa;
-  padding: 3rem 2rem;
+.pago ul {
+  list-style: none;
+  padding: 0;
 }
 
-.pago .formulario {
-  max-width: 400px;
+.pago li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
 }
 
-.pago select {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
+.pago li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+/* Mapa */
+.mapa iframe {
+  width: 100%;
   border-radius: 8px;
-}
-
-/* Contacto */
-.contacto p {
-  margin: 0.5rem 0;
-  text-align: center;
-}
-
-iframe {
   margin-top: 1rem;
-  border-radius: 10px;
 }
 
 /* Footer */
 .footer {
-  background-color: #001f3f;
-  color: white;
+  background-color: #000;
+  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }

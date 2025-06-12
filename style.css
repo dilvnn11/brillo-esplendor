@@ -3,33 +3,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9; /* gris claro */
-  color: #333; /* texto base */
+  background-color: #f2f2f2;
+  color: #333;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ENCABEZADO */
+/* Encabezado */
 .encabezado {
-  background-color: #1e3a5f; /* azul oscuro */
+  background-color: #001f3f;
   color: white;
-  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 .logo {
@@ -37,177 +27,192 @@ img {
 }
 
 .nav a {
-  margin-left: 20px;
   color: white;
-  font-weight: 500;
-  transition: color 0.3s;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
 .nav a:hover {
-  color: #90cdf4; /* azul claro */
+  color: #00bfff;
 }
 
-/* HERO */
+/* Hero */
 .hero {
   position: relative;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 70vh;
   overflow: hidden;
 }
 
 .hero-img {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(50%);
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: -1;
 }
 
 .hero-texto {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
   color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hero-texto h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  font-size: 3rem;
 }
 
 .hero-texto p {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #eee;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 .btn {
-  background-color: #2563eb; /* azul */
+  background-color: #0074D9;
   color: white;
-  padding: 12px 24px;
+  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   font-weight: bold;
-  transition: background 0.3s;
+  text-decoration: none;
 }
 
 .btn:hover {
-  background-color: #1e40af;
+  background-color: #005fa3;
 }
 
-/* SECCIONES GENERALES */
+/* Secciones */
 .seccion {
-  padding: 60px 20px;
+  padding: 4rem 2rem;
+}
+
+h2 {
   text-align: center;
+  margin-bottom: 2rem;
+  color: #001f3f;
 }
 
-.seccion h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  color: #1e3a5f;
-}
-
-/* SERVICIOS */
+/* Servicios en formato horizontal */
 .servicios-contenedor {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 30px;
 }
 
 .servicio {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 280px;
-  transition: transform 0.3s;
-}
-
-.servicio:hover {
-  transform: scale(1.03);
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
 }
 
 .servicio img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: auto;
+}
+
+.servicio h3 {
+  margin: 1rem 0 0.5rem;
+  color: #003366;
 }
 
 .precio {
-  font-size: 20px;
-  color: #2563eb;
   font-weight: bold;
-  margin-top: 10px;
+  color: #0074D9;
+  margin-bottom: 1rem;
 }
 
-/* FORMULARIO DE RESERVA */
+/* Formulario de Reserva */
 .formulario {
   max-width: 500px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .formulario input,
-.formulario button {
-  padding: 12px;
+.formulario select {
+  padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
 }
 
-.formulario input:focus {
-  outline: 2px solid #2563eb;
+/* Testimonios */
+.testimonios-contenedor {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* TESTIMONIOS */
 .testimonio {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #e2e8f0; /* gris suave */
-  padding: 30px;
+  background-color: white;
+  padding: 1.5rem;
+  padding-top: 3rem;
   border-radius: 10px;
+  position: relative;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .testimonio img {
-  width: 80px;
-  height: 80px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  border: 3px solid white;
   object-fit: cover;
-  margin-bottom: 20px;
 }
 
-/* CONTACTO */
+/* Pago */
+.pago {
+  background-color: #e6f0fa;
+  padding: 3rem 2rem;
+}
+
+.pago .formulario {
+  max-width: 400px;
+}
+
+.pago select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Contacto */
 .contacto p {
-  margin: 10px 0;
-  font-size: 18px;
+  margin: 0.5rem 0;
+  text-align: center;
 }
 
-/* FOOTER */
+iframe {
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Footer */
 .footer {
-  background-color: #1e3a5f;
+  background-color: #001f3f;
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  padding: 1rem 0;
+  margin-top: 3rem;
 }
